@@ -1,5 +1,4 @@
 //Declaracion de variables
-var encontrar = [];
 var contp = 0;
 var cadena = ""
 var array2 = [];
@@ -15,8 +14,7 @@ console.log(cadena);
 
 function picas(numArray) {
   array2.map(function(x) {
-    if ((x == numArray) && (encontrar.includes(x) == false)) {
-      encontrar.push(x);
+    if ((x == numArray)) {
       contp += 1;
     }
   });
@@ -65,7 +63,6 @@ $('#search_field').keypress(function(e) {
       //debugger
       $("#tabla").append("<tr><td>" + num + "</td><td>" + numPicas + "</td><td>" + numFijas + "</td></tr>")
       contp = 0;
-      encontrar = [];
     }
   }
 
