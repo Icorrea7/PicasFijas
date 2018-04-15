@@ -5,9 +5,7 @@ var cadena = ""
 var array2 = [];
 //Numero aleatorio
 var myArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var nuevo = myArray.sort(function() {
-  return Math.random() - 0.5
-});
+var nuevo = myArray.sort(function() {return Math.random() - 0.5});
 
 for (i = 0; i < 4; i++) {
   array2[i] = nuevo[i]
@@ -38,9 +36,8 @@ function fijas(numArray) {
 };
 
 $('#search_field').keypress(function(e) {
-  $("#digitos").css('color', 'black')
-  $("#search_field").css('background-color', 'white')
-  $("#search_field").css('color', 'black')
+  $('span').removeClass('errort')
+  $('input').removeClass('errorc')
   if (e.which == 13) {
     var num = $("#search_field").val();
     var numArray = num.split("");
@@ -53,9 +50,8 @@ $('#search_field').keypress(function(e) {
       }
     });
     if ((num.length != 4) || (repetidos > 4)) {
-      $("#digitos").css('color', 'red')
-      $("#search_field").css('background-color', '#F6CECE')
-      $("#search_field").css('color', 'red')
+      $('span').addClass('errort')
+      $('input').addClass('errorc')
     } else {
       var numPicas = 0
       var numFijas = 0
