@@ -3,15 +3,15 @@ var contp = 0;
 var cadena = ""
 var array2 = [];
 //Numero aleatorio
-var myArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var nuevo = myArray.sort(function() {return Math.random() - 0.5});
-
-for (i = 0; i < 4; i++) {
-  array2[i] = nuevo[i]
-  cadena = cadena + nuevo[i];
+function numAleatorio(){
+  var myArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  var nuevo = myArray.sort(function() {return Math.random() - 0.5});
+  for (i = 0; i < 4; i++) {
+    array2[i] = nuevo[i]
+    cadena = cadena + nuevo[i];
+  }
+  console.log(cadena);
 }
-console.log(cadena);
-
 function picas(numArray) {
   array2.map(function(x) {
     if ((x == numArray)) {
@@ -32,8 +32,8 @@ function fijas(numArray) {
   }
   return cont;
 };
-
-$('#search_field').keypress(function(e) {
+$('document').load(numAleatorio());
+$('#search_field').keyup(function(e) {
   $('span').removeClass('errort')
   $('input').removeClass('errorc')
   if (e.which == 13) {
